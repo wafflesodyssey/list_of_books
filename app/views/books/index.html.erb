@@ -1,0 +1,19 @@
+<h1> test </h1>
+
+
+
+
+<% @books.each do |book| %>
+
+<p>
+  <a href="/books/<% book.id %>"><%= book.name %> </a>
+
+</p>
+
+<% end %>
+
+
+<form action="/pets" method="post">
+  <input type="text" name="pet[name]" value="">
+  <input type="submit" name="submit" value="Save">
+</form>
