@@ -1,19 +1,19 @@
-<h1> test </h1>
+<h1> Books on Books </h1>
+
+
+<table>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+    <td><%= link_to "#{book.title}", book_path(id: book.id)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
 
-
-<% @books.each do |book| %>
-
-<p>
-  <a href="/books/<% book.id %>"><%= book.name %> </a>
-
-</p>
-
+<%= form_tag("/books", class: "") do %>
+<%= text_field_tag "book[title]" %>
+<%= submit_tag %>
 <% end %>
-
-
-<form action="/pets" method="post">
-  <input type="text" name="pet[name]" value="">
-  <input type="submit" name="submit" value="Save">
-</form>
