@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   get "/" => "books#index"
 
   post "/books" => "books#create"
-  get 'books/:id' => "books#show", as: :book
-  get "/books/:id" => "books#:id"
+  get "/books/:id" => "books#show", as: :book
+
+  get "/books/:id/edit" => "books#edit", as: :edit_book
+  patch "/books/:id" => "books#update", as: :update_book
+  delete "/books/:id" => "books#delete", as: :delete_book
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
